@@ -1,4 +1,6 @@
 备注：
+ 前提准备：zookeeper安装：http://gqsunrise.iteye.com/blog/2367143
+        dubbo-admin ：dubbo管理系统安装：http://blog.csdn.net/u013142781/article/details/50396621
  1、工程创建参考  http://blog.csdn.net/lanlw123/article/details/53464143
  2、项目结构：使用maven多模块的结构
    1)dubbo 父项目：打包时只需要右键 run-maven install
