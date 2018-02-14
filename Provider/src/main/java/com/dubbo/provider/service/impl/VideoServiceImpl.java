@@ -5,11 +5,13 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.dubbo.common.entity.VideoVideoInfo;
 import com.dubbo.provider.dao.VideoMapper;
 import com.dubbo.provider.service.VideoService;
 
+@Service("videoService")
 public class VideoServiceImpl implements VideoService {
 	private static final Logger logger = LoggerFactory.getLogger(VideoService.class);
 	
