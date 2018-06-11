@@ -16,7 +16,8 @@ public class VideoVideoInfo implements java.io.Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = -6374394409574974542L;
-    private Integer id;
+    private Integer id;//id
+
     private String videoId;//视频id
     private String videoTitleMaster;//视频主标题
     private String videoTitleSlave;//视频副标题
