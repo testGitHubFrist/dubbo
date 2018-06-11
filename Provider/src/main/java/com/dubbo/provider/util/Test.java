@@ -8,7 +8,7 @@ public class Test {
 //	public static void main(String[] args) {
 //		testLog();
 //	}
-	@org.junit.Test
+//	@org.junit.Test
     public  void testLog(){
 		BasicConfigurator.configure();
 	    logger.debug("my first log4j info");
