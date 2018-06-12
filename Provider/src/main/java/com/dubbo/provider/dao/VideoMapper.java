@@ -6,6 +6,6 @@ import com.dubbo.common.entity.VideoVideoInfo;
 
 public interface VideoMapper {
 
-	public List<VideoVideoInfo> queryVideoList() ;
+    public List<VideoVideoInfo> queryVideoList();
 
 }

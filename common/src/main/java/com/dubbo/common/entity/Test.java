@@ -2,7 +2,7 @@ package com.dubbo.common.entity;
 
 public class Test {
 
-    private  Integer id;
+    private Integer id;
     private String name;
 
     public Integer getId() {
