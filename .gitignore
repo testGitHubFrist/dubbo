@@ -42,3 +42,4 @@ captures/
 # Keystore files
 *.jks
 /.gitignore
+/.settings/
