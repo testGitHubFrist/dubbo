@@ -1,6 +1,8 @@
 package com.dubbo.util;
 
 import java.net.InetAddress;
+import java.net.NetworkInterface;
+import java.util.Enumeration;
 
 /**
  * 获取系统信息工具类
@@ -65,9 +67,27 @@ public class OSUtils {
 				ip=InetAddress.getLocalHost();
 			}else{
 				//如果是Linux系统
+				boolean bFindIP=false;
+				Enumeration<NetworkInterface> networkInterface=NetworkInterface.getNetworkInterfaces();
+				while(networkInterface.hasMoreElements()){
+					if(bFindIP){
+						break;
+					}
+					NetworkInterface ni=networkInterface.nextElement();
+					Enumeration<InetAddress> ips=ni.getInetAddresses();
+					while(ips.hasMoreElements()){
+						ip=ips.nextElement();
+						if(ip.isSiteLocalAddress() && !ip.isLoopbackAddress() && !ip.getHostAddress().contains(":"))
+							bFindIP=true;
+						    break;
+					}
+				}
 			}
 		} catch (Exception e) {
-			// TODO: handle exception
+			e.printStackTrace();
+		}
+		if(ip!=null){
+			localIp=ip.getHostAddress();
 		}
 	}
 	
@@ -82,5 +102,39 @@ public class OSUtils {
 			isWindowsOS=true;
 		}
 		return isWindowsOS;
+	}
+	
+	/**
+	 * 本地ip是否等于给定的IP
+	 * @param ip
+	 * @return
+	 */
+	public static boolean isEqualOtherIp(String ip){
+		boolean flag=false;
+		if(ip==null || ip.length() ==0 ){
+			return false;
+		}
+		InetAddress localAddress = null;
+		try {
+			boolean bFindIP=false;
+			Enumeration<NetworkInterface> networkInterface=NetworkInterface.getNetworkInterfaces();
+			while(networkInterface.hasMoreElements()){
+				if(bFindIP){
+					break;
+				}
+				NetworkInterface ni=networkInterface.nextElement();
+				Enumeration<InetAddress> ips=ni.getInetAddresses();
+				while(ips.hasMoreElements()){
+					localAddress=ips.nextElement();
+					if(localAddress.getHostAddress().equals(ip))
+						bFindIP=true;
+					    flag=true;
+					    break;
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return flag;
 	}
 }
