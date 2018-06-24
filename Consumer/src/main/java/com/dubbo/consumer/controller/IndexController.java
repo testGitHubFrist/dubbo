@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.dubbo.annotations.ApiOperation;
 import com.dubbo.common.entity.VideoVideoInfo;
 import com.dubbo.provider.service.VideoService;
 
@@ -19,6 +20,8 @@ public class IndexController {
 	@Autowired
 	VideoService videoService;
 
+	@ApiOperation(value = "dubbo项目测试自定义注解" ,notes="测试自定义注解",tags="",response=ModelAndView.class
+			,httpMethod="POST",nickname="zhangsan",protocols="http")
 	@RequestMapping("video/info")
 	public ModelAndView queryVideoInfo() {
 		logger.info("*************controller : video/info************************");

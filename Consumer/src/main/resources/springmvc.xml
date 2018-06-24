@@ -13,7 +13,6 @@
      <!-- 扫描Controller 创建RequestMapping对应关系 -->
 	<context:annotation-config/>
     <context:component-scan base-package="com.dubbo.consumer.controller"/>
-  <!--   <context:component-scan base-package="com.dubbo.provider.service" /> -->
     <mvc:annotation-driven/>
     
 	<!-- 配置json解析 -->
@@ -46,7 +45,6 @@
                             <value>application/json;charset=UTF-8</value>
                         </list>
                     </property>
-                    <!-- <property name="objectMapper" ref="objectMapper"/> -->
                 </bean>
             </list>
         </property>
@@ -66,4 +64,7 @@
 			<value>5242880</value>
 		</property>
 	</bean>
+	
+	<!-- spring 拦截器 -->
+	
 </beans>
