@@ -12,16 +12,19 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.dubbo.annotations.ApiOperation;
+import com.dubbo.annotations.Privilege;
 import com.dubbo.common.entity.VideoVideoInfo;
 import com.dubbo.provider.service.VideoService;
 
 @Controller
+@Privilege(privilegeName="test")//权限注解
 public class IndexController {
 	private static final Logger logger = LoggerFactory.getLogger(IndexController.class);
 	
 	@Autowired
 	VideoService videoService;
 
+	//日志注解
 	@ApiOperation(value = "dubbo项目测试自定义注解" ,notes="测试自定义注解",tags="",response=ModelAndView.class
 			,httpMethod="POST",nickname="zhangsan",protocols="http")
 	@RequestMapping("video/info")
