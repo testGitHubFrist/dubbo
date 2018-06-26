@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:context="http://www.springframework.org/schema/context"
-	xsi:schemaLocation="
+       xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="
         http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/mvc
         http://www.springframework.org/schema/mvc/spring-mvc.xsd
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
-        
-     <!-- 扫描Controller 创建RequestMapping对应关系 -->
-	<context:annotation-config/>
+
+    <!-- 扫描Controller 创建RequestMapping对应关系 -->
+    <context:annotation-config/>
     <context:component-scan base-package="com.dubbo.consumer.controller"/>
     <mvc:annotation-driven/>
-    
-	<!-- 配置json解析 -->
+
+    <!-- 配置json解析 -->
     <bean id="objectMapper" class="org.codehaus.jackson.map.ObjectMapper">
         <property name="serializationInclusion" value="NON_NULL"/>
     </bean>
@@ -56,15 +57,20 @@
         <property name="prefix" value="/WEB-INF/pages/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
-	
-	<bean id="multipartResolver"
-		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
-		<!-- 设置上传文件的最大尺寸为5MB -->
-		<property name="maxUploadSize">
-			<value>5242880</value>
-		</property>
-	</bean>
-	
-	<!-- spring 拦截器 -->
-	
+
+    <bean id="multipartResolver"
+          class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <!-- 设置上传文件的最大尺寸为5MB -->
+        <property name="maxUploadSize">
+            <value>5242880</value>
+        </property>
+    </bean>
+
+    <!-- spring 拦截器 -->
+    <bean id="apiContextAspect" class="com.dubbo.annotations.aop.aopLog.ApiLogAspect"/>
+    <aop:config>
+        <aop:pointcut id="si"
+                      expression="(@annotation(org.springframework.web.bind.annotation.ResponseBody) and execution(public * com.dubbo.consumer..*.*(..)))"/>
+        <aop:advisor pointcut-ref="si" advice-ref="apiContextAspect" order="0"/>
+    </aop:config>
 </beans>
