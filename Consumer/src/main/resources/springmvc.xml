@@ -13,7 +13,7 @@
 
     <!-- 扫描Controller 创建RequestMapping对应关系 -->
     <context:annotation-config/>
-    <context:component-scan base-package="com.dubbo.consumer.controller"/>
+    <context:component-scan base-package="com.dubbo"/>
     <mvc:annotation-driven/>
 
     <!-- 配置json解析 -->
@@ -73,4 +73,6 @@
                       expression="(@annotation(org.springframework.web.bind.annotation.ResponseBody) and execution(public * com.dubbo.consumer..*.*(..)))"/>
         <aop:advisor pointcut-ref="si" advice-ref="apiContextAspect" order="0"/>
     </aop:config>
+    <!-- 启动AspectJ支持 -->
+    <aop:aspectj-autoproxy/>
 </beans>
