@@ -67,7 +67,7 @@
     </bean>
 
     <!-- spring 拦截器 -->
-    <bean id="apiContextAspect" class="com.dubbo.annotations.aop.aopLog.ApiLogAspect"/>
+    <bean id="apiContextAspect" class="com.dubbo.aop.log.ApiLogAspect"/>
     <aop:config>
         <aop:pointcut id="si"
                       expression="(@annotation(org.springframework.web.bind.annotation.ResponseBody) and execution(public * com.dubbo.consumer..*.*(..)))"/>

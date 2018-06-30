@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Aspect//切面
-public class BeforeAdviceTest {
+public class AopTest {
 	// 切入点注解
 	@Pointcut("execution(* com.dubbo.consumer..*.*(..))")
 	public void queryList() {

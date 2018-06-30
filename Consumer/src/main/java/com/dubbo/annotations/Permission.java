@@ -12,8 +12,10 @@ import java.lang.annotation.Target;
  */
 @Target({ElementType.METHOD, ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
-public @interface Privilege {
+public @interface Permission {
 
 	//权限名称
-	String privilegeName() default "";
+	String value() default "";
+	
+	String operation() default "";
 }

@@ -1,4 +1,4 @@
-package com.dubbo.annotations.aop.aopLog;
+package com.dubbo.aop.log;
 
 import com.alibaba.dubbo.common.json.JSON;
 import com.dubbo.util.BusinessException;
@@ -42,16 +42,16 @@ public class ApiLogAspect implements MethodInterceptor {
      */
     public Object invoke(MethodInvocation invocation) throws Throwable {
 
-        ActionLogWrapper logWrapper = new ActionLogWrapper();
+//        ActionLogWrapper logWrapper = new ActionLogWrapper();
         //日志上下文
-        logWrapper.setContentId(ApiContext.getInstance().getContext().get(ApiContext.ApiContextKey.CONTEXT_ID).toString());
+//        logWrapper.setContentId(ApiContext.getInstance().getContext().get(ApiContext.ApiContextKey.CONTEXT_ID).toString());
         Method method = invocation.getMethod();
         //
-        logWrapper.setMethodName(method.getName());
+//        logWrapper.setMethodName(method.getName());
         ////方法定义所在的类
-        logWrapper.setServiceName(method.getDeclaringClass().getName());
-        ApiContext.getInstance().getContext().put(ApiContext.ApiContextKey.API_SERVICE_NAME, logWrapper.getServiceName());
-        ApiContext.getInstance().getContext().put(ApiContext.ApiContextKey.API_METHOD_NAME, logWrapper.getMethodName());
+//        logWrapper.setServiceName(method.getDeclaringClass().getName());
+//        ApiContext.getInstance().getContext().put(ApiContext.ApiContextKey.API_SERVICE_NAME, logWrapper.getServiceName());
+//        ApiContext.getInstance().getContext().put(ApiContext.ApiContextKey.API_METHOD_NAME, logWrapper.getMethodName());
         try {
             //执行target方法
             Object result = invocation.proceed();
@@ -60,16 +60,16 @@ public class ApiLogAspect implements MethodInterceptor {
                 //response 赋值
                 AbstractResponse response = (AbstractResponse) result;
                 //设置IP等
-                setResponseSystemInfo(response, logWrapper);
-                logWrapper.setResponseCode(response.getRetcode());
+//                setResponseSystemInfo(response, logWrapper);
+//                logWrapper.setResponseCode(response.getRetcode());
                 //如果返回值不为0时，纪录入参与出参
                 if (response.getRetcode() != 0) {
                     //纪录入参
                     if (invocation.getArguments().length > 0) {
-                        logWrapper.setParameters(JSON.json(invocation.getArguments()[0]));
+//                        logWrapper.setParameters(JSON.json(invocation.getArguments()[0]));
                     }
                     //纪录返回值
-                    logWrapper.setResult(JSON.json(response));
+//                    logWrapper.setResult(JSON.json(response));
                 }
                 // replace return desc
                 if (response.getRetcode() < 0 && StringUtils.isNotBlank(this.unifiedSystemErrorDescription)) {
@@ -78,17 +78,18 @@ public class ApiLogAspect implements MethodInterceptor {
             }
             return  result;
         } catch (Throwable t) {
-            return handlerError(t, method.getReturnType(), logWrapper, invocation.getArguments());
+//            return handlerError(t, method.getReturnType(), logWrapper, invocation.getArguments());
         }finally {
-            String clientIp = SpringContextUtil.getRequest().getRemoteAddr();
-            String protocolIp = SpringContextUtil.getRequest().getLocalAddr();
+//            String clientIp = SpringContextUtil.getRequest().getRemoteAddr();
+//            String protocolIp = SpringContextUtil.getRequest().getLocalAddr();
 
-            logWrapper.setClientIp(clientIp);
-            logWrapper.setProtocolServerIp(protocolIp);
+//            logWrapper.setClientIp(clientIp);
+//            logWrapper.setProtocolServerIp(protocolIp);
 
-            ActionLog originalEntity = logWrapper.getOriginalEntity();
-            actionLogger.info(originalEntity.toString());
+//            ActionLog originalEntity = logWrapper.getOriginalEntity();
+//            actionLogger.info(originalEntity.toString());
         }
+		return method;
     }
 
     private void setResponseSystemInfo(AbstractResponse response, ActionLogWrapper logWrapper) {

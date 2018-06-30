@@ -1,4 +1,4 @@
-package com.dubbo.annotations.aop.aopLog;
+package com.dubbo.aop.log;
 
 import com.dubbo.util.OSUtils;
 import com.dubbo.util.PropertiesHelper;
