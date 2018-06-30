@@ -5,7 +5,7 @@
    
 <mapper namespace="com.dubbo.provider.dao.VideoMapper">
 
-	<select id="queryVideoList" resultType="com.dubbo.common.entity.VideoVideoInfo" >
+	<select id="queryVideoList" resultType="com.dubbo.common.model.VideoVideoInfo" >
 	SELECT
 	   IFNULL(video_big_img_url,'') AS videoBigImgURL,
 	   IFNULL(video_little_img_url,'') AS videoLittleImgURL,

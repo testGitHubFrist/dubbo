@@ -7,9 +7,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.dubbo.common.entity.VideoVideoInfo;
+import com.dubbo.common.model.VideoVideoInfo;
+import com.dubbo.common.service.VideoService;
 import com.dubbo.provider.dao.VideoMapper;
-import com.dubbo.provider.service.VideoService;
 
 @Service("videoService")
 public class VideoServiceImpl implements VideoService {
@@ -19,6 +19,7 @@ public class VideoServiceImpl implements VideoService {
 
 	public List<VideoVideoInfo> query() {
 		List<VideoVideoInfo> list = null;
+		VideoVideoInfo resp=new VideoVideoInfo();
 		try {
 			logger.info("*******provider 视频信息实现类***********");
 			list = userMapper.queryVideoList();

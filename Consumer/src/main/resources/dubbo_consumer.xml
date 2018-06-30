@@ -13,5 +13,5 @@
 	<dubbo:registry address="localhost:2181" protocol="zookeeper" />
 
 	<!-- 生成远程服务代理，可以像使用本地bean一样使用demoService -->
-	<dubbo:reference id="videoService" interface="com.dubbo.provider.service.VideoService" check="false" timeout="60000" />
+	<dubbo:reference id="videoService" interface="com.dubbo.common.service.VideoService" check="false" timeout="60000" />
 </beans>

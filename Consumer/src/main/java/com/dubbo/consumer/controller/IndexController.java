@@ -1,8 +1,5 @@
 package com.dubbo.consumer.controller;
 
-import java.util.List;
-import java.util.UUID;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,33 +8,30 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.dubbo.annotations.ApiOperation;
-import com.dubbo.annotations.Permission;
-import com.dubbo.common.entity.VideoVideoInfo;
-import com.dubbo.provider.service.VideoService;
+import com.dubbo.common.annotations.ApiOperation;
+import com.dubbo.common.constants.ResponseEntity;
+import com.dubbo.consumer.service.IndexService;
 
 @Controller
 public class IndexController {
-	private static final Logger logger = LoggerFactory
-			.getLogger(IndexController.class);
+	private static final Logger logger = LoggerFactory.getLogger(IndexController.class);
 
 	@Autowired
-	VideoService videoService;
+	private IndexService indexService;
 
 	// 日志注解
 	@ApiOperation(value = "dubbo项目测试自定义注解", notes = "测试自定义注解", tags = "", response = ModelAndView.class, httpMethod = "POST", nickname = "zhangsan", protocols = "http")
 	@RequestMapping("video/info")
-	public ModelAndView queryVideoInfo() {
-		logger.info("*************controller : video/info************************");
-		ModelAndView mv = new ModelAndView("videoInfo");
+	@ResponseBody
+	public ResponseEntity queryVideoInfo() {
+		logger.info("*************video/info begin************************");
+		ResponseEntity resp=new ResponseEntity();
 		try {
-			List<VideoVideoInfo> list = videoService.query();
-			mv.addObject("count", list.size());
-			logger.info("*************controller : video/info  返回数据 count:"
-					+ list.size() + "************************");
+			resp=indexService.query();
+			logger.info("*************video/info end resp:{}************************",resp.toString());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return mv;
+		return resp;
 	}
 }

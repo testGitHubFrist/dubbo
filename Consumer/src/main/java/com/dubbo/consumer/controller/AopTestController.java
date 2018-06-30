@@ -8,7 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.dubbo.common.entity.VideoVideoInfo;
+import com.dubbo.common.model.VideoVideoInfo;
 
 /**
  * aop 测试
@@ -19,8 +19,7 @@ import com.dubbo.common.entity.VideoVideoInfo;
 @Controller
 public class AopTestController {
 
-	private static final Logger logger = LoggerFactory
-			.getLogger(AopTestController.class);
+	private static final Logger logger = LoggerFactory.getLogger(AopTestController.class);
 
 	/**
 	 * AOP测试
