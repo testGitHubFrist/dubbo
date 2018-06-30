@@ -11,6 +11,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
+import com.dubbo.common.annotations.Permission;
 import com.dubbo.common.constants.CommonConstants;
 
 /**
@@ -21,20 +22,20 @@ import com.dubbo.common.constants.CommonConstants;
 @Aspect
 @Component
 public class PrivilegeAspect {
-	
+	private Logger logger = LoggerFactory.getLogger(PrivilegeAspect.class);
     /**
      * 
      * @param jionPoint
      * @return
      */
-//	@Around(value="execution(@com.dubbo.annotations.Permission * *(..))")
+	@Around(value="@annotation(com.dubbo.common.annotations.Permission)")
 	public Object around(ProceedingJoinPoint jionPoint) throws Throwable {
-		Logger logger = LoggerFactory.getLogger(this.getTargetClass(jionPoint));
 		Long begin = new Date().getTime();
+		checkPrivilege(jionPoint);
 		Object result = jionPoint.proceed();
 		Long end = new Date().getTime();
         Long spendTime = (end - begin)/CommonConstants.MILLON_INT;
-        logger.info("权限校验耗时 time：{}:s   ******",spendTime);
+        System.out.println("权限校验耗时 time：{}:"+spendTime+"s   ******");
 		return result;
 	}
 	
@@ -53,7 +54,7 @@ public class PrivilegeAspect {
 	 * @return
 	 */
 	private Method getTargetMethod(ProceedingJoinPoint jionPoint){
-		MethodSignature methodSignature=(MethodSignature)jionPoint;
+		MethodSignature methodSignature=(MethodSignature)jionPoint.getSignature();
 		return methodSignature.getMethod();
 	} 
 	
@@ -62,6 +63,15 @@ public class PrivilegeAspect {
 	 *       2、校验类上是否有Permission注解，如果没有则抛异常
 	 */
 	private void checkPrivilege(ProceedingJoinPoint jionPoint){
-		
+		//获取方法上的注解
+		Permission methodPermission=this.getTargetMethod(jionPoint).getAnnotation(Permission.class);
+		if(methodPermission!=null){
+			System.out.println("方法上注解:"+methodPermission.value());
+		}
+		//获取类上的注解
+		Permission classPermission=(Permission) this.getTargetClass(jionPoint).getAnnotation(Permission.class);
+		if(classPermission!=null){
+			System.out.println("类上注解:"+classPermission.value());
+		}
 	}
 }

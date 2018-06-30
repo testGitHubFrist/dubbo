@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.dubbo.common.annotations.ApiOperation;
+import com.dubbo.common.annotations.Permission;
 import com.dubbo.common.constants.ResponseEntity;
 import com.dubbo.consumer.service.IndexService;
 
@@ -20,6 +21,7 @@ public class IndexController {
 	private IndexService indexService;
 
 	// 日志注解
+	@Permission(value="test" ,operation="测试权限")
 	@ApiOperation(value = "dubbo项目测试自定义注解", notes = "测试自定义注解", tags = "", response = ModelAndView.class, httpMethod = "POST", nickname = "zhangsan", protocols = "http")
 	@RequestMapping("video/info")
 	@ResponseBody
