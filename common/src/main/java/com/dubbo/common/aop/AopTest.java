@@ -18,6 +18,7 @@ public class AopTest {
 	public void queryList() {
 	}
 
+
 	// 目标类方法执行前执行该方法
 	@Before(value = "queryList()")
 	public void before() {
