@@ -9,7 +9,7 @@ import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
-
+//测试
 @Component
 @Aspect//切面
 public class AopTest {
@@ -17,7 +17,6 @@ public class AopTest {
 	@Pointcut("execution(* com.dubbo.consumer..*.*(..))")
 	public void queryList() {
 	}
-
 
 	// 目标类方法执行前执行该方法
 	@Before(value = "queryList()")
