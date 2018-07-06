@@ -20,6 +20,8 @@ public class IndexController {
 	@Autowired
 	private IndexService indexService;
 
+
+
 	// 日志注解
 	@Permission(value="test" ,operation="测试权限")
 	@ApiOperation(value = "dubbo项目测试自定义注解", notes = "测试自定义注解", tags = "", response = ModelAndView.class, httpMethod = "POST", nickname = "zhangsan", protocols = "http")
