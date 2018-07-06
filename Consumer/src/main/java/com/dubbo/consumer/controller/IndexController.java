@@ -30,6 +30,7 @@ public class IndexController {
 	public ResponseEntity queryVideoInfo() {
 		logger.info("*************video/info begin************************");
 		ResponseEntity resp=new ResponseEntity();
+		//dsdsd
 		try {
 			resp=indexService.query();
 			logger.info("*************video/info end resp:{}************************",resp.toString());
