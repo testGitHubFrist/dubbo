@@ -6,5 +6,5 @@ import org.springframework.stereotype.Service;
 
 @Service("aopTestService")
 public class AopTestService {
-	private static final Logger logger = LoggerFactory.getLogger(AopTestService.class);
+    private static final Logger logger = LoggerFactory.getLogger(AopTestService.class);
 }

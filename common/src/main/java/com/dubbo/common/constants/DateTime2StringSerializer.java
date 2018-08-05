@@ -17,6 +17,7 @@ import com.fasterxml.jackson.databind.SerializerProvider;
  *         return date;
  *     }
  * </pre>
+ *
  * @author: Stony  Date: 2016/4/15 Time: 11:22
  */
 public class DateTime2StringSerializer extends JsonSerializer<Date> {

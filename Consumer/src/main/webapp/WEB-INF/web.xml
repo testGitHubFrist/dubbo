@@ -1,50 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
 http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
-	<context-param>
-		<param-name>contextConfigLocation</param-name>
-		<param-value>
-		   classpath:applicationContext.xml
-		</param-value>
-	</context-param>
 
-	 <listener>
+    <!--使用ContextLoaderListener配置时，需要告诉它spring配置文件的位置-->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>
+            classpath:applicationContext.xml
+        </param-value>
+    </context-param>
+
+    <!--配置上下文载入器，最常用的上下文载入器是一个Servlet监听器，其名称为ContextLoaderListener-->
+    <!--ContextLoaderListener：Spring的核心就是配置文件，可以说配置文件是spring中必不可少的东西，而这个参数就是使web与Spring的配置文件相结合的一个关键配置-->
+    <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-     </listener>
+    </listener>
 
-	<servlet>
-		<servlet-name>springmvc</servlet-name>
-		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-		<init-param>
-			<param-name>contextConfigLocation</param-name>
-			<param-value>classpath:springmvc.xml</param-value>
-		</init-param>
-		<load-on-startup>1</load-on-startup>
-	</servlet>
+    <!--springMVC的前端控制器-->
+    <servlet>
+        <servlet-name>springmvc</servlet-name>
+        <!--DispatcherServlet：包含了SpringMVC的请求逻辑，Spring使用此类拦截web请求并进行相应的逻辑处理-->
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <!--Servlet的init(ServletConfig var1) 方法中的ServletConfig参数，web.xml中定义Servlet时通过init-param标签配置的参数由ServletConfig保存.-->
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>classpath:springmvc.xml</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
 
-	<!--</servlet-mapping>-->
+    <!--</servlet-mapping>-->
     <servlet-mapping>
         <servlet-name>springmvc</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
 
-	<filter>
-		<filter-name>CharacterEncodingFilter</filter-name>
-		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
-		<init-param>
-			<param-name>encoding</param-name>
-			<param-value>utf-8</param-value>
-		</init-param>
-	</filter>
-	<filter-mapping>
-		<filter-name>CharacterEncodingFilter</filter-name>
-		<url-pattern>/*</url-pattern>
-	</filter-mapping>
+    <filter>
+        <filter-name>CharacterEncodingFilter</filter-name>
+        <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>utf-8</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>CharacterEncodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
 
 
-	<welcome-file-list>
-		<welcome-file>index.jsp</welcome-file>
-	</welcome-file-list>
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+    <!--servlet测试-->
+    <listener>
+        <listener-class>com.dubbo.consumer.test.servlet.MyServletContextListener</listener-class>
+    </listener>
 </web-app>

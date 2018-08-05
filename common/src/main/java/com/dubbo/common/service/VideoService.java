@@ -6,5 +6,5 @@ import com.dubbo.common.model.VideoVideoInfo;
 
 public interface VideoService {
 
-	List<VideoVideoInfo> query() ;
+    List<VideoVideoInfo> query();
 }

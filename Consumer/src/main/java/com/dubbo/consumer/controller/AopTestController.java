@@ -12,25 +12,24 @@ import com.dubbo.common.model.VideoVideoInfo;
 
 /**
  * aop 测试
- * 
- * @author GaoQun
  *
+ * @author GaoQun
  */
 @Controller
 public class AopTestController {
 
-	private static final Logger logger = LoggerFactory.getLogger(AopTestController.class);
+    private static final Logger logger = LoggerFactory.getLogger(AopTestController.class);
 
-	/**
-	 * AOP测试
-	 * 
-	 * @return
-	 */
-	@RequestMapping("aopTest")
-	@ResponseBody
-	public VideoVideoInfo aopTest() {
-		VideoVideoInfo videoVideoInfo = new VideoVideoInfo();
-		videoVideoInfo.setVideoBigImgURL(UUID.randomUUID().toString());
-		return videoVideoInfo;
-	}
+    /**
+     * AOP测试
+     *
+     * @return
+     */
+    @RequestMapping("aopTest")
+    @ResponseBody
+    public VideoVideoInfo aopTest() {
+        VideoVideoInfo videoVideoInfo = new VideoVideoInfo();
+        videoVideoInfo.setVideoBigImgURL(UUID.randomUUID().toString());
+        return videoVideoInfo;
+    }
 }

@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * Created by Administrator on 2017/5/18.
  */
-public class User implements Serializable{
+public class User implements Serializable {
 
     private int id;
 
@@ -44,49 +44,49 @@ public class User implements Serializable{
     private String status;//用户状态；0:无效，1:有效；2：注册待审核；3：注册申请审核未通过
 
     private int role;
-    
+
     private int registerType;
-    
+
     private String registerApprover;
-    
+
     private String registerApprovalOpinion;
-    
+
     private String registerApproverDate;
 
-    
-	public String getRegisterApprover() {
-		return registerApprover;
-	}
 
-	public void setRegisterApprover(String registerApprover) {
-		this.registerApprover = registerApprover;
-	}
+    public String getRegisterApprover() {
+        return registerApprover;
+    }
 
-	public String getRegisterApprovalOpinion() {
-		return registerApprovalOpinion;
-	}
+    public void setRegisterApprover(String registerApprover) {
+        this.registerApprover = registerApprover;
+    }
 
-	public void setRegisterApprovalOpinion(String registerApprovalOpinion) {
-		this.registerApprovalOpinion = registerApprovalOpinion;
-	}
+    public String getRegisterApprovalOpinion() {
+        return registerApprovalOpinion;
+    }
 
-	public String getRegisterApproverDate() {
-		return registerApproverDate;
-	}
+    public void setRegisterApprovalOpinion(String registerApprovalOpinion) {
+        this.registerApprovalOpinion = registerApprovalOpinion;
+    }
 
-	public void setRegisterApproverDate(String registerApproverDate) {
-		this.registerApproverDate = registerApproverDate;
-	}
+    public String getRegisterApproverDate() {
+        return registerApproverDate;
+    }
 
-	public int getRegisterType() {
-		return registerType;
-	}
+    public void setRegisterApproverDate(String registerApproverDate) {
+        this.registerApproverDate = registerApproverDate;
+    }
 
-	public void setRegisterType(int registerType) {
-		this.registerType = registerType;
-	}
+    public int getRegisterType() {
+        return registerType;
+    }
 
-	public int getId() {
+    public void setRegisterType(int registerType) {
+        this.registerType = registerType;
+    }
+
+    public int getId() {
         return id;
     }
 

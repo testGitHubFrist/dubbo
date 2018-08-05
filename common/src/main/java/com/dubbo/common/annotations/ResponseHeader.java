@@ -9,11 +9,11 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface ResponseHeader {
 
-	String name() default "";
-	
-	String description() default "";
-	
-	Class<?> response() default Void.class;
-	
-	String responseContainer() default "";
+    String name() default "";
+
+    String description() default "";
+
+    Class<?> response() default Void.class;
+
+    String responseContainer() default "";
 }

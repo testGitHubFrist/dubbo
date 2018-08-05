@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>  
-<!DOCTYPE mapper  
-  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
-  "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
-   
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
 <mapper namespace="com.dubbo.provider.dao.VideoMapper">
 
-	<select id="queryVideoList" resultType="com.dubbo.common.model.VideoVideoInfo" >
+    <select id="queryVideoList" resultType="com.dubbo.common.model.VideoVideoInfo">
 	SELECT
 	   IFNULL(video_big_img_url,'') AS videoBigImgURL,
 	   IFNULL(video_little_img_url,'') AS videoLittleImgURL,

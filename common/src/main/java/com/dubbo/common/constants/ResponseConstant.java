@@ -43,7 +43,6 @@ public abstract class ResponseConstant {
     public static final String MSG_LOGIN_INVALID = "帐号或密码错误";
 
 
-
     /**
      * 会话失效
      */
@@ -68,7 +67,6 @@ public abstract class ResponseConstant {
     public static final String MSG_OTHER_INVALID = "其他错误";
 
 
-
     /**
      * 参数校验异常
      */
@@ -91,17 +89,19 @@ public abstract class ResponseConstant {
     //
 
 
-
-
     /**
      * 上传图片失败
      */
     public static final int CODE_UPDATE_FILE_FAIL = 100023;
 
-    /** 创建 用户详细错误 **/
+    /**
+     * 创建 用户详细错误
+     **/
     public static final int CODE_CREATE_DETAIL_FAIL = 100024;
 
-    /** 更新 用户详细错误 **/
+    /**
+     * 更新 用户详细错误
+     **/
     public static final int CODE_UPDATE_DETAIL_FAIL = 100025;
 
 
@@ -111,81 +111,119 @@ public abstract class ResponseConstant {
 
     public static final int CODE_VIDEO_NOT_ANYLSIS = 110001;
     public static final String MSG_VIDEO_NOT_ANYLSIS = "文件暂未解析";
-    
-    /** 用户注册相关 **/
+
+    /**
+     * 用户注册相关
+     **/
     public static final int CODE_REGISTER_EXIST = 100025;
     public static final String MSG_REGISTER_EXIST = "该帐号已被注册";
-    /** 输入验证码不正确 **/
+    /**
+     * 输入验证码不正确
+     **/
     public static final int CODE_REGISTER_CODE = 100026;
     public static final String MSG_REGISTER_CODE = "输入的验证码错误";
 
-    /** 用户状态；0:无效，1:有效；2：注册待审核；3：注册申请审核未通过 **/
-    public static final String USER_VALID_STATUS_  = "1";
-    public static final String USER_INVALID_STATUS_  = "0";
-    public static final String USER_REGISTER_PENGDING_APPROVE  = "2";
-    public static final String USER_REGISTER_APPROVE_NOT_PASSED  = "3";
-    
-    /** 注册时默认所属机构 **/
-    public static final String INITIAL_ORGANIZATION="0";
-    
-    /** 修改密码时，原始密码不正确  **/
+    /**
+     * 用户状态；0:无效，1:有效；2：注册待审核；3：注册申请审核未通过
+     **/
+    public static final String USER_VALID_STATUS_ = "1";
+    public static final String USER_INVALID_STATUS_ = "0";
+    public static final String USER_REGISTER_PENGDING_APPROVE = "2";
+    public static final String USER_REGISTER_APPROVE_NOT_PASSED = "3";
+
+    /**
+     * 注册时默认所属机构
+     **/
+    public static final String INITIAL_ORGANIZATION = "0";
+
+    /**
+     * 修改密码时，原始密码不正确
+     **/
     public static final int CODE_UPDATE_PASSWORD_FAILED = 100027;
     public static final String MSG_UPDATE_PASSWORD_FAILED = "输入的原始密码不正确";
-    
-    
-    /** 用户不存在  **/
+
+
+    /**
+     * 用户不存在
+     **/
     public static final int CODE_USER_NOT_EXIST = 100028;
     public static final String MSG_USER_NOT_EXIST = "用户不存在";
-    
-    /** 用户新增终端时，已存在 **/
+
+    /**
+     * 用户新增终端时，已存在
+     **/
     public static final int CODE_USER_TERMINAL_EXIST = 100029;
     public static final String MSG_USER_TERMINAL_EXIST = "该终端已存在，请重新输入！";
-    
-    /** 商品不存在  **/
+
+    /**
+     * 商品不存在
+     **/
     public static final int CODE_PRODUCT_NOT_EXIST = 100030;
     public static final String MSG_PRODUCT_NOT_EXIST = "该商品不存在，请重新购买其他商品！";
-    
-    /** 用户已购买商品  **/
+
+    /**
+     * 用户已购买商品
+     **/
     public static final int CODE_USER_PRODUCT_EXIST = 100031;
     public static final String MSG_USER_PRODUCT_EXIST = "您已购买商品，不允许重复购买！";
-    
-    /** 暂无数据 **/
+
+    /**
+     * 暂无数据
+     **/
     public static final int CODE_NOT_PARA = 100032;
     public static final String MSG_NOT_PARA = "暂无数据！";
-    
-    /** 用户未购买商品  **/
+
+    /**
+     * 用户未购买商品
+     **/
     public static final int CODE_USER_PRODUCT_NOT_EXIST = 100033;
     public static final String MSG_USER_PRODUCT_NOT_EXIST = "您还未购买任何产品！";
-    
-    /** 该视频无法编辑元素标签 **/
-    public static final int CODE_NOT_CREATE_ELEMENT_TAGS= 100034;
+
+    /**
+     * 该视频无法编辑元素标签
+     **/
+    public static final int CODE_NOT_CREATE_ELEMENT_TAGS = 100034;
     public static final String MSG_NOT_CREATE_ELEMENT_TAGS = "该视频播放时间不满足元素标签限制！";
-    
-    /** 该视频已存在元素标签  **/
-    public static final int CODE_EXIST_ELEMENT_TAGS= 100035;
+
+    /**
+     * 该视频已存在元素标签
+     **/
+    public static final int CODE_EXIST_ELEMENT_TAGS = 100035;
     public static final String MSG_EXIST_ELEMENT_TAGS = "该视频播已存在元素标签，不能重复添加！";
-    
-    /** 您注册的账号已存在，等待管理员审核。  **/
-    public static final int CODE_REGISTER_PENGDING_APPROVE= 100036;
+
+    /**
+     * 您注册的账号已存在，等待管理员审核。
+     **/
+    public static final int CODE_REGISTER_PENGDING_APPROVE = 100036;
     public static final String MSG_REGISTER_PENGDING_APPROVE = "您注册的账号已存在，等待管理员审核。";
-    
-    /** 您注册的账号，未通过审核。**/
-    public static final int CODE_REGISTER_APPROVE_NOT_PASSED= 100037;
+
+    /**
+     * 您注册的账号，未通过审核。
+     **/
+    public static final int CODE_REGISTER_APPROVE_NOT_PASSED = 100037;
     public static final String MSG_REGISTER_APPROVE_NOT_PASSED = "您注册的账号，未通过审核。";
-    
-    /**您注册的账号还未被审核通过，暂时无法登陆。**/
+
+    /**
+     * 您注册的账号还未被审核通过，暂时无法登陆。
+     **/
     public static final int CODE_LOGIN_PENGDING_APPROVE = 100038;
     public static final String MSG_LOGIN_PENGDING_APPROVE = "您注册的账号还未被审核通过，暂时无法登陆。";
-    
-    /**您注册的账号未被审核通过，暂时无法登陆。**/
+
+    /**
+     * 您注册的账号未被审核通过，暂时无法登陆。
+     **/
     public static final int CODE_LOGIN_APPROVE_NOT_PASSED = 100039;
     public static final String MSG_LOGIN_APPROVE_NOT_PASSED = "您注册的账号未被审核通过，暂时无法登陆。";
-    
-    /**您的账号存在异常，无法登陆，请联系管理员。**/
+
+    /**
+     * 您的账号存在异常，无法登陆，请联系管理员。
+     **/
     public static final int CODE_LOGIN_ERROR = 100040;
     public static final String MSG_LOGIN_ERROR = "您的账号存在异常，无法登陆，请联系管理员。";
-    
-    /**恭喜您注册成功，等待管理员审核。。**/
+
+    /**
+     * 恭喜您注册成功，等待管理员审核。。
+     **/
     public static final int CODE_REGISTER_SUCCESS = 100041;
     public static final String MSG_REGISTER_SUCCESS = "恭喜您注册成功，等待管理员审核。";
 }

@@ -6,16 +6,16 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- *  ElementType.TYPE//类，接口（包括注解），枚举
- * @author GaoQun
+ * ElementType.TYPE//类，接口（包括注解），枚举
  *
+ * @author GaoQun
  */
 @Target({ElementType.METHOD, ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Permission {
 
-	//权限名称
-	String value() default "";
-	
-	String operation() default "";
+    //权限名称
+    String value() default "";
+
+    String operation() default "";
 }

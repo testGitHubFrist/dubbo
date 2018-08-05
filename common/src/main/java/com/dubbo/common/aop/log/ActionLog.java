@@ -4,309 +4,309 @@ import java.util.Date;
 
 /**
  * 日志模板
- * @author GaoQun
  *
+ * @author GaoQun
  */
 public class ActionLog {
 
-	private boolean flag=false;
-	
-	private int id;
-	
-	private String uniqueID;
-	
-	private String sessionID;
-	
-	private String contextID;
-	
-	private String executeID;
-	//是否异常，异常=1，正常=0
-	private int  logType;
-	
-	private String serviceName;
-	
-	private String methodName;
-	
-	private String fromUrl;
-	
-	private String referUrl;
-	
-	private String fromSystem;
-	
-	private String clentIP;
-	
-	private String potocolServerIP;
-	
-	private String appServerIP;
-	
-	private String exceptionMessage;
-	
-	private String detail;
-	
-	private float excuteTimeSpan;
-	
-	private Date logTime;
-	
-	private String extend1;
-	
-	private String extend2;
-	
-	private Date createTime;
-	
-	private String productLine;
-	
-	private int responseCode;
-	
-	private String channel;
-	
-	private long methodStartTime;
-	
-	private String parameters;
-	
-	private String result;
+    private boolean flag = false;
 
-	public boolean isFlag() {
-		return flag;
-	}
+    private int id;
 
-	public void setFlag(boolean flag) {
-		this.flag = flag;
-	}
+    private String uniqueID;
 
-	public int getId() {
-		return id;
-	}
+    private String sessionID;
 
-	public void setId(int id) {
-		this.id = id;
-	}
+    private String contextID;
 
-	public String getUniqueID() {
-		return uniqueID;
-	}
+    private String executeID;
+    //是否异常，异常=1，正常=0
+    private int logType;
 
-	public void setUniqueID(String uniqueID) {
-		this.uniqueID = uniqueID;
-	}
+    private String serviceName;
 
-	public String getSessionID() {
-		return sessionID;
-	}
+    private String methodName;
 
-	public void setSessionID(String sessionID) {
-		this.sessionID = sessionID;
-	}
+    private String fromUrl;
 
-	public String getContextID() {
-		return contextID;
-	}
+    private String referUrl;
 
-	public void setContextID(String contextID) {
-		this.contextID = contextID;
-	}
+    private String fromSystem;
 
-	public String getExecuteID() {
-		return executeID;
-	}
+    private String clentIP;
 
-	public void setExecuteID(String executeID) {
-		this.executeID = executeID;
-	}
+    private String potocolServerIP;
 
-	public int getLogType() {
-		return logType;
-	}
+    private String appServerIP;
 
-	public void setLogType(int logType) {
-		this.logType = logType;
-	}
+    private String exceptionMessage;
 
-	public String getServiceName() {
-		return serviceName;
-	}
+    private String detail;
 
-	public void setServiceName(String serviceName) {
-		this.serviceName = serviceName;
-	}
+    private float excuteTimeSpan;
 
-	public String getMethodName() {
-		return methodName;
-	}
+    private Date logTime;
 
-	public void setMethodName(String methodName) {
-		this.methodName = methodName;
-	}
+    private String extend1;
 
-	public String getFromUrl() {
-		return fromUrl;
-	}
+    private String extend2;
 
-	public void setFromUrl(String fromUrl) {
-		this.fromUrl = fromUrl;
-	}
+    private Date createTime;
 
-	public String getReferUrl() {
-		return referUrl;
-	}
+    private String productLine;
 
-	public void setReferUrl(String referUrl) {
-		this.referUrl = referUrl;
-	}
+    private int responseCode;
 
-	public String getFromSystem() {
-		return fromSystem;
-	}
+    private String channel;
 
-	public void setFromSystem(String fromSystem) {
-		this.fromSystem = fromSystem;
-	}
+    private long methodStartTime;
 
-	public String getClentIP() {
-		return clentIP;
-	}
+    private String parameters;
 
-	public void setClentIP(String clentIP) {
-		this.clentIP = clentIP;
-	}
+    private String result;
 
-	public String getPotocolServerIP() {
-		return potocolServerIP;
-	}
+    public boolean isFlag() {
+        return flag;
+    }
 
-	public void setPotocolServerIP(String potocolServerIP) {
-		this.potocolServerIP = potocolServerIP;
-	}
+    public void setFlag(boolean flag) {
+        this.flag = flag;
+    }
 
-	public String getAppServerIP() {
-		return appServerIP;
-	}
+    public int getId() {
+        return id;
+    }
 
-	public void setAppServerIP(String appServerIP) {
-		this.appServerIP = appServerIP;
-	}
+    public void setId(int id) {
+        this.id = id;
+    }
 
-	public String getExceptionMessage() {
-		return exceptionMessage;
-	}
+    public String getUniqueID() {
+        return uniqueID;
+    }
 
-	public void setExceptionMessage(String exceptionMessage) {
-		this.exceptionMessage = exceptionMessage;
-	}
+    public void setUniqueID(String uniqueID) {
+        this.uniqueID = uniqueID;
+    }
 
-	public String getDetail() {
-		return detail;
-	}
+    public String getSessionID() {
+        return sessionID;
+    }
 
-	public void setDetail(String detail) {
-		this.detail = detail;
-	}
+    public void setSessionID(String sessionID) {
+        this.sessionID = sessionID;
+    }
 
-	public float getExcuteTimeSpan() {
-		return excuteTimeSpan;
-	}
+    public String getContextID() {
+        return contextID;
+    }
 
-	public void setExcuteTimeSpan(float excuteTimeSpan) {
-		this.excuteTimeSpan = excuteTimeSpan;
-	}
+    public void setContextID(String contextID) {
+        this.contextID = contextID;
+    }
 
-	public Date getLogTime() {
-		return logTime;
-	}
+    public String getExecuteID() {
+        return executeID;
+    }
 
-	public void setLogTime(Date logTime) {
-		this.logTime = logTime;
-	}
+    public void setExecuteID(String executeID) {
+        this.executeID = executeID;
+    }
 
-	public String getExtend1() {
-		return extend1;
-	}
+    public int getLogType() {
+        return logType;
+    }
 
-	public void setExtend1(String extend1) {
-		this.extend1 = extend1;
-	}
+    public void setLogType(int logType) {
+        this.logType = logType;
+    }
 
-	public String getExtend2() {
-		return extend2;
-	}
+    public String getServiceName() {
+        return serviceName;
+    }
 
-	public void setExtend2(String extend2) {
-		this.extend2 = extend2;
-	}
+    public void setServiceName(String serviceName) {
+        this.serviceName = serviceName;
+    }
 
-	public Date getCreateTime() {
-		return createTime;
-	}
+    public String getMethodName() {
+        return methodName;
+    }
 
-	public void setCreateTime(Date createTime) {
-		this.createTime = createTime;
-	}
+    public void setMethodName(String methodName) {
+        this.methodName = methodName;
+    }
 
-	public String getProductLine() {
-		return productLine;
-	}
+    public String getFromUrl() {
+        return fromUrl;
+    }
 
-	public void setProductLine(String productLine) {
-		this.productLine = productLine;
-	}
+    public void setFromUrl(String fromUrl) {
+        this.fromUrl = fromUrl;
+    }
 
-	public int getResponseCode() {
-		return responseCode;
-	}
+    public String getReferUrl() {
+        return referUrl;
+    }
 
-	public void setResponseCode(int responseCode) {
-		this.responseCode = responseCode;
-	}
+    public void setReferUrl(String referUrl) {
+        this.referUrl = referUrl;
+    }
 
-	public String getChannel() {
-		return channel;
-	}
+    public String getFromSystem() {
+        return fromSystem;
+    }
 
-	public void setChannel(String channel) {
-		this.channel = channel;
-	}
+    public void setFromSystem(String fromSystem) {
+        this.fromSystem = fromSystem;
+    }
 
-	public long getMethodStartTime() {
-		return methodStartTime;
-	}
+    public String getClentIP() {
+        return clentIP;
+    }
 
-	public void setMethodStartTime(long methodStartTime) {
-		this.methodStartTime = methodStartTime;
-	}
+    public void setClentIP(String clentIP) {
+        this.clentIP = clentIP;
+    }
 
-	public String getParameters() {
-		return parameters;
-	}
+    public String getPotocolServerIP() {
+        return potocolServerIP;
+    }
 
-	public void setParameters(String parameters) {
-		this.parameters = parameters;
-	}
+    public void setPotocolServerIP(String potocolServerIP) {
+        this.potocolServerIP = potocolServerIP;
+    }
 
-	public String getResult() {
-		return result;
-	}
+    public String getAppServerIP() {
+        return appServerIP;
+    }
 
-	public void setResult(String result) {
-		this.result = result;
-	}
+    public void setAppServerIP(String appServerIP) {
+        this.appServerIP = appServerIP;
+    }
 
-	@Override
-	public String toString() {
-		return "ActionLog [flag=" + flag + ", id=" + id + ", uniqueID="
-				+ uniqueID + ", sessionID=" + sessionID + ", contextID="
-				+ contextID + ", executeID=" + executeID + ", logType="
-				+ logType + ", serviceName=" + serviceName + ", methodName="
-				+ methodName + ", fromUrl=" + fromUrl + ", referUrl="
-				+ referUrl + ", fromSystem=" + fromSystem + ", clentIP="
-				+ clentIP + ", potocolServerIP=" + potocolServerIP
-				+ ", appServerIP=" + appServerIP + ", exceptionMessage="
-				+ exceptionMessage + ", detail=" + detail + ", excuteTimeSpan="
-				+ excuteTimeSpan + ", logTime=" + logTime + ", extend1="
-				+ extend1 + ", extend2=" + extend2 + ", createTime="
-				+ createTime + ", productLine=" + productLine
-				+ ", responseCode=" + responseCode + ", channel=" + channel
-				+ ", methodStartTime=" + methodStartTime + ", parameters="
-				+ parameters + ", result=" + result + "]";
-	}
-	
-	
+    public String getExceptionMessage() {
+        return exceptionMessage;
+    }
+
+    public void setExceptionMessage(String exceptionMessage) {
+        this.exceptionMessage = exceptionMessage;
+    }
+
+    public String getDetail() {
+        return detail;
+    }
+
+    public void setDetail(String detail) {
+        this.detail = detail;
+    }
+
+    public float getExcuteTimeSpan() {
+        return excuteTimeSpan;
+    }
+
+    public void setExcuteTimeSpan(float excuteTimeSpan) {
+        this.excuteTimeSpan = excuteTimeSpan;
+    }
+
+    public Date getLogTime() {
+        return logTime;
+    }
+
+    public void setLogTime(Date logTime) {
+        this.logTime = logTime;
+    }
+
+    public String getExtend1() {
+        return extend1;
+    }
+
+    public void setExtend1(String extend1) {
+        this.extend1 = extend1;
+    }
+
+    public String getExtend2() {
+        return extend2;
+    }
+
+    public void setExtend2(String extend2) {
+        this.extend2 = extend2;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public String getProductLine() {
+        return productLine;
+    }
+
+    public void setProductLine(String productLine) {
+        this.productLine = productLine;
+    }
+
+    public int getResponseCode() {
+        return responseCode;
+    }
+
+    public void setResponseCode(int responseCode) {
+        this.responseCode = responseCode;
+    }
+
+    public String getChannel() {
+        return channel;
+    }
+
+    public void setChannel(String channel) {
+        this.channel = channel;
+    }
+
+    public long getMethodStartTime() {
+        return methodStartTime;
+    }
+
+    public void setMethodStartTime(long methodStartTime) {
+        this.methodStartTime = methodStartTime;
+    }
+
+    public String getParameters() {
+        return parameters;
+    }
+
+    public void setParameters(String parameters) {
+        this.parameters = parameters;
+    }
+
+    public String getResult() {
+        return result;
+    }
+
+    public void setResult(String result) {
+        this.result = result;
+    }
+
+    @Override
+    public String toString() {
+        return "ActionLog [flag=" + flag + ", id=" + id + ", uniqueID="
+                + uniqueID + ", sessionID=" + sessionID + ", contextID="
+                + contextID + ", executeID=" + executeID + ", logType="
+                + logType + ", serviceName=" + serviceName + ", methodName="
+                + methodName + ", fromUrl=" + fromUrl + ", referUrl="
+                + referUrl + ", fromSystem=" + fromSystem + ", clentIP="
+                + clentIP + ", potocolServerIP=" + potocolServerIP
+                + ", appServerIP=" + appServerIP + ", exceptionMessage="
+                + exceptionMessage + ", detail=" + detail + ", excuteTimeSpan="
+                + excuteTimeSpan + ", logTime=" + logTime + ", extend1="
+                + extend1 + ", extend2=" + extend2 + ", createTime="
+                + createTime + ", productLine=" + productLine
+                + ", responseCode=" + responseCode + ", channel=" + channel
+                + ", methodStartTime=" + methodStartTime + ", parameters="
+                + parameters + ", result=" + result + "]";
+    }
+
+
 }

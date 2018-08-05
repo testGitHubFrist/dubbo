@@ -7,6 +7,7 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
+
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.ClassUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -36,9 +37,6 @@ public class ExceptionUtils {
     public static Throwable getCause(Throwable throwable) {
         return getCause(throwable, CAUSE_METHOD_NAMES);
     }
-
-
-
 
 
     /**
@@ -88,7 +86,7 @@ public class ExceptionUtils {
 
         if (method != null && Throwable.class.isAssignableFrom(method.getReturnType())) {
             try {
-                return (Throwable)method.invoke(throwable);
+                return (Throwable) method.invoke(throwable);
             } catch (IllegalAccessException var4) {
                 ;
             } catch (IllegalArgumentException var5) {

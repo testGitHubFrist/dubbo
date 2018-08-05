@@ -76,10 +76,10 @@ public class ApiLogAspect implements MethodInterceptor {
                     response.setRetdesc(this.unifiedSystemErrorDescription);
                 }
             }
-            return  result;
+            return result;
         } catch (Throwable t) {
 //            return handlerError(t, method.getReturnType(), logWrapper, invocation.getArguments());
-        }finally {
+        } finally {
 //            String clientIp = SpringContextUtil.getRequest().getRemoteAddr();
 //            String protocolIp = SpringContextUtil.getRequest().getLocalAddr();
 
@@ -89,7 +89,7 @@ public class ApiLogAspect implements MethodInterceptor {
 //            ActionLog originalEntity = logWrapper.getOriginalEntity();
 //            actionLogger.info(originalEntity.toString());
         }
-		return method;
+        return method;
     }
 
     private void setResponseSystemInfo(AbstractResponse response, ActionLogWrapper logWrapper) {

@@ -9,7 +9,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 /**
  * @author Stony Created Date : 2016/4/21  10:58
  */
-public class ResponseEntity<T> implements Serializable{
+public class ResponseEntity<T> implements Serializable {
 
     private T data;
     private Date responseDate;
@@ -50,10 +50,9 @@ public class ResponseEntity<T> implements Serializable{
     }
 
     /**
-     *
      * @return 返回json字符串，null值不显示
      */
-    public String toJsonString(){
+    public String toJsonString() {
         return JacksonUtil.toJson(this);
     }
 

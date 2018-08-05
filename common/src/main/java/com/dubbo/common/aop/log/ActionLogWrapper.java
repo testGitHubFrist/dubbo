@@ -168,7 +168,7 @@ public class ActionLogWrapper {
             actLogEntity.setExceptionMessage(exceptionMessage);
             String detail = replaceInvalidChar(ExceptionUtils.getStackTrace(exception));
             if (detail != null && detail.length() > 6000) {
-                detail = detail.substring(0,5999);
+                detail = detail.substring(0, 5999);
             }
             actLogEntity.setDetail(detail);
         }

@@ -208,11 +208,11 @@
             <artifactId>common</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
-        <!--<dependency>
+        <dependency>
             <groupId>com.test.dubbo</groupId>
             <artifactId>Provider</artifactId>
             <version>0.0.1-SNAPSHOT</version>
-        </dependency>-->
+        </dependency>
         <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
         <dependency>
             <groupId>org.apache.commons</groupId>
