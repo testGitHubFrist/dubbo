@@ -6,14 +6,11 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.dubbo.common.constants.ResponseEntity;
 import com.dubbo.common.model.VideoVideoInfo;
 import com.dubbo.common.service.VideoService;
-
-import javax.annotation.Resource;
 
 @Service
 public class IndexService {

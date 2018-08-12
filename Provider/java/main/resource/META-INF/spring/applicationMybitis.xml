@@ -30,7 +30,7 @@
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <!-- 加載mybatis的配置文件 -->
         <property name="mapperLocations" value="classpath:META-INF/sqlmap/*.xml"></property>
-        <property name="typeAliasesPackage" value="com.dubbo.common.entity"></property>
+
         <!-- 数据源 -->
         <property name="dataSource" ref="dataSource"/>
     </bean>
