@@ -10,4 +10,7 @@
     <module>Provider</module>
     <module>Consumer</module>
   </modules>
+<build>
+		<finalName>test</finalName>
+	</build>
 </project>
