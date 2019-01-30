@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd"> 
+<configuration>
+	<properties resource="mybatis/jdbcPool.properties" />
+	<typeAliases>
+		<!-- 设置别名 -->
+		<typeAlias type="com.dubbo.consumer.test.mybatis.pojo.Role" alias="role" />
+	</typeAliases>
+	<!--<plugins>
+		 <plugin interceptor ="interceptor.MyPlugin" >
+		   <property name ="dbType" value="mysql"/>
+		   <property name ="limit" value="500"/>
+		 </plugin>
+	</plugins>-->
+	<!-- 配置数据库连接的环境 -->
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="${driverName}" />
+				<property name="url" value="${url}" />
+				<property name="username" value="${userName}" />
+				<property name="password" value="${password}" />
+			</dataSource>
+		</environment>
+	</environments>
+
+	<mappers>
+		<!-- 引入Mapper.xml -->
+		<mapper resource="mybatis/roleMapper.xml" />
+	</mappers>
+	
+</configuration>

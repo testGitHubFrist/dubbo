@@ -15,6 +15,7 @@
     <context:annotation-config/>
     <context:component-scan base-package="com.dubbo"/>
     <mvc:annotation-driven/>
+    <import resource="dubbo_consumer.xml"/>
 
     <!-- 配置json解析 -->
     <bean id="objectMapper" class="org.codehaus.jackson.map.ObjectMapper">

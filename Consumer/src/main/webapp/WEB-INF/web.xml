@@ -4,19 +4,7 @@
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
 http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
 
-    <!--使用ContextLoaderListener配置时，需要告诉它spring配置文件的位置-->
-    <context-param>
-        <param-name>contextConfigLocation</param-name>
-        <param-value>
-            classpath:applicationContext.xml
-        </param-value>
-    </context-param>
 
-    <!--配置上下文载入器，最常用的上下文载入器是一个Servlet监听器，其名称为ContextLoaderListener-->
-    <!--ContextLoaderListener：Spring的核心就是配置文件，可以说配置文件是spring中必不可少的东西，而这个参数就是使web与Spring的配置文件相结合的一个关键配置-->
-    <listener>
-        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-    </listener>
 
     <!--springMVC的前端控制器-->
     <servlet>
